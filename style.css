@@ -1,0 +1,272 @@
+/*StAuth10244: I Jeong eun Kim, 000831580 certify that this material is my original work. 
+No other person's work has been used without due acknowledgement. 
+I have not made my work available to anyone else.*/
+
+/* Google Web Font */
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+html,
+body {
+  background-color: #202b38;
+  height: 100%;
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #eee
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #202b38;
+  padding: 8px 12px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: normal;
+  color: #eee;
+  cursor: pointer;
+}
+
+.logo img {
+  width: 150px;
+  color: #d49466;
+}
+
+.icons {
+  list-style: none;
+  display: flex;
+  padding-left: 0;
+}
+
+.icons li {
+  font-size: 24px;
+  padding: 8px 5px;
+  cursor: pointer;
+}
+
+.icons li:nth-child(1) {
+  color: #3b5998;
+}
+
+.icons li:nth-child(2) {
+  color: transparent;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.menu {
+  /* 한 줄에 하나씩 배치*/
+  display: flex;
+  list-style: none;
+  /* 리스트 앞에 dot 없앰*/
+  padding-left: 0;
+  /* 중간정렬을 위해 왼쪽 패딩 없앰*/
+}
+
+.menu li {
+  padding: 8px 25px;
+  transition: 0.3s;
+}
+
+.menu li:hover {
+  background-color: #d49466;
+  border-radius: 5px;
+}
+
+.video video {
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.info {
+  position: absolute;
+  width: 700px;
+  left: 100px;
+  bottom: 100px;
+  animation: showing 2s 1s linear;
+  animation-fill-mode: both;
+}
+
+@keyframes showing {
+  0% {
+    opacity: 0;
+    margin-left: -100px;
+  }
+
+  100% {
+    opacity: 1;
+    margin-left: 0;
+  }
+}
+
+.info h1 {
+  font-size: 60px;
+  margin: 0;
+}
+
+.info h1 span {
+  display: block;
+  color: crimson;
+}
+
+.btn-book,
+.btn-location {
+  background-color: #fff;
+  color: #222;
+  text-transform: uppercase;
+  margin-top: 20px;
+  width: 130px;
+  display: inline-block;
+  text-align: center;
+  padding: 7px;
+  border-radius: 20px;
+  margin-right: 10px;
+  border: 2px solid #fff;
+  transition: 0.3s;
+}
+
+.btn-location {
+  background-color: transparent;
+  color: #fff;
+}
+
+.btn-book:hover {
+  background-color: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+.btn-location:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.togglebtn {
+  display: none;
+  position: absolute;
+  right: 32px;
+  font-size: 24px;
+  color: #d49466;
+}
+
+h2 {
+  font-weight: normal;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  margin: 30px 0;
+}
+
+h2 span {
+  display: none;
+}
+
+footer {
+  margin-top: 2rem;
+  background: #202b38;
+  color: #fff;
+  text-align: center;
+  margin:0;
+  padding: 5px;
+}
+
+.wrapper {
+  display: grid;
+  /*   defines-column how should it be like size, fraction etc */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /*   defines-rows */
+  grid-template-rows: repeat(2, 300px);
+}
+
+.wrapper>div>img:hover {
+  opacity: 1;
+}
+
+.wrapper>div>img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: .3s;
+}
+
+.wrapper>div:hover {
+  transform: scale(1.1);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.wrapper>div {
+  background: #fff;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+  transition: .3s;
+}
+
+@media screen and (max-width: 720px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 24px;
+  }
+
+  .navbar .menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .navbar .menu li {
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+  }
+
+  .logo {
+    font-weight: bold;
+  }
+
+  .icons {
+    display: none;
+    justify-content: center;
+    width: 100%;
+    border-bottom: 1px solid #fff;
+  }
+
+  .togglebtn {
+    display: block;
+  }
+
+  .menu.active,
+  .icons.active {
+    display: flex;
+  }
+
+  .wrapper>div:hover {
+    transform: none;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  .video {
+    display: none;
+  }
+
+  .info {
+    display: none;
+  }
+
+  h2 span {
+    display: inline-block;
+    color: crimson;
+  }
+}
